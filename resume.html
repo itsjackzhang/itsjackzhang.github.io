@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jack Zhang — Résumé · Print Edition</title>
+<meta name="description" content="Jack Zhang — VP Finance, Toronto. One-page résumé, print edition.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23F4EFE6'/%3E%3Ctext x='30' y='46' font-family='Georgia,serif' font-weight='bold' font-size='40' text-anchor='middle' fill='%230F0E0C'%3EJ%3C/text%3E%3Ccircle cx='48' cy='44' r='4' fill='%23A8341F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EFE6;
+    --ink: #0F0E0C;
+    --muted: #76706A;
+    --rule: #C9C0B0;
+    --accent: #A8341F;
+    --display: "Fraunces", "Times New Roman", serif;
+    --body: "Newsreader", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #d8d2c4;
+    color: var(--ink);
+    font-family: var(--body);
+    font-feature-settings: "ss01" on, "tnum" on, "lnum" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ───── Screen toolbar (never prints) ───── */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem clamp(1rem, 4vw, 2.5rem);
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .toolbar a, .toolbar button {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--paper);
+    background: none;
+    border: none;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .toolbar a:hover, .toolbar button:hover { color: #E8B4A8; }
+  .toolbar .print-btn {
+    border: 1px solid rgba(244,239,230,0.4);
+    padding: 0.55rem 1.1rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .toolbar .print-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .toolbar .hint {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    color: rgba(244,239,230,0.55);
+    font-family: var(--body);
+    font-style: italic;
+  }
+  @media (max-width: 640px) { .toolbar .hint { display: none; } }
+
+  /* ───── Sheet scaling wrapper (screen only) ───── */
+  .sheet-stage { padding: 0.4in 0; overflow: hidden; }
+  .sheet-wrap { width: 8.5in; margin: 0; transform-origin: top left; }
+
+  .sheet {
+    width: 8.5in;
+    height: 11in;
+    min-height: 11in;
+    max-height: 11in;
+    margin: 0 auto;
+    padding: 0.42in 0.55in 0.36in 0.55in;
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 18px 40px rgba(0,0,0,0.12);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ───── Masthead ───── */
+  .masthead { padding-top: 0.06in; }
+  .folio {
+    font-family: var(--body);
+    text-transform: uppercase;
+    font-size: 7.6pt;
+    letter-spacing: 0.42em;
+    color: var(--muted);
+    font-variant-numeric: lining-nums;
+    margin: 0 0 0.3in 0;
+    display: flex;
+    align-items: center;
+    gap: 0.16in;
+    height: 1em;
+  }
+  .folio::before { content: ""; flex: 0 0 0.3in; height: 1px; background: var(--ink); }
+  .folio::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  .folio .dot { color: var(--accent); margin: 0 0.6em; letter-spacing: 0; }
+  .name {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: 60pt;
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .name .period {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "wght" 500;
+    margin-left: 0.01em;
+  }
+  .standfirst {
+    margin: 0.22in 0 0 0;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 36, "wght" 400, "SOFT" 60;
+    font-size: 11.5pt;
+    line-height: 1.36;
+    color: var(--ink);
+    max-width: 6.4in;
+    padding-left: 0.26in;
+    text-indent: -0.26in;
+  }
+  .standfirst .dash { color: var(--accent); font-style: normal; font-weight: 500; margin-right: 0.06in; }
+  .standfirst em {
+    color: var(--ink);
+    font-style: italic;
+    font-weight: 500;
+    background-image: linear-gradient(to top, rgba(168,52,31,0.16) 0, rgba(168,52,31,0.16) 0.18em, transparent 0.18em);
+  }
+
+  /* ───── Section heading ───── */
+  .section { margin-top: 0.2in; }
+  .section-head {
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 8.4pt;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.14in;
+    margin: 0 0 0.09in 0;
+  }
+  .section-head::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+
+  /* ───── Experience timeline rail ───── */
+  .timeline { position: relative; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.04in;
+    top: 0.16in;
+    bottom: 0.16in;
+    width: 1px;
+    background: var(--rule);
+    opacity: 0.7;
+  }
+
+  /* ───── Role block ───── */
+  .role {
+    display: grid;
+    grid-template-columns: 1.62in 1fr;
+    gap: 0 0.22in;
+    margin-bottom: 0.1in;
+    position: relative;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .role:last-child { margin-bottom: 0; }
+  .role::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.075in;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--paper);
+  }
+
+  .meta {
+    padding-left: 0.18in;
+    font-size: 8.6pt;
+    color: var(--muted);
+    line-height: 1.35;
+    font-feature-settings: "tnum" on, "lnum" on;
+  }
+  .meta .dates {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 9pt;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.03in;
+    white-space: nowrap;
+  }
+  .meta .company {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 18, "wght" 600;
+    font-size: 10.5pt;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    margin-bottom: 0.04in;
+  }
+  .meta .descriptor,
+  .meta .location {
+    display: block;
+    font-style: italic;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 12, "wght" 400;
+    font-size: 8.4pt;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .meta .descriptor { margin-top: 0.03in; }
+
+  .content .title {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 18, "wght" 500;
+    font-size: 10.5pt;
+    color: var(--accent);
+    margin: 0 0 0.05in 0;
+    line-height: 1.22;
+  }
+  .content .title .progression {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 9pt;
+    font-weight: 400;
+    font-variation-settings: "opsz" 14, "wght" 400;
+    margin-left: 0.04in;
+  }
+  ul.bullets { margin: 0; padding: 0; list-style: none; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 0.15in;
+    margin-bottom: 0.02in;
+    font-size: 8.9pt;
+    line-height: 1.26;
+    color: var(--ink);
+  }
+  ul.bullets li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  ul.bullets li b, ul.bullets li strong {
+    font-weight: 500;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    color: var(--ink);
+  }
+
+  .notable {
+    margin-top: 0.05in;
+    padding-left: 0.13in;
+    border-left: 1.5px solid var(--accent);
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 14, "wght" 500;
+    font-size: 8.7pt;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  /* ───── Footer strip ───── */
+  .footer-strip {
+    margin-top: 0.17in;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 0.4in;
+  }
+  .foot-col .foot-head {
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 8pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.06in;
+    padding-bottom: 0.04in;
+    border-bottom: 1px solid var(--rule);
+  }
+  .foot-col .foot-line {
+    font-size: 8.8pt;
+    line-height: 1.36;
+    color: var(--ink);
+  }
+  .foot-col .foot-line .institution {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .foot-col .foot-line .sub {
+    display: block;
+    font-style: italic;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 12, "wght" 400;
+    color: var(--muted);
+    font-size: 8.3pt;
+    margin-top: 0.02in;
+  }
+
+  /* ───── Print ───── */
+  @page { size: letter; margin: 0; }
+  @media print {
+    html, body { background: var(--paper); }
+    .toolbar { display: none; }
+    .sheet-stage { padding: 0; }
+    .sheet-wrap { transform: none !important; width: auto; height: auto !important; }
+    .sheet {
+      margin: 0;
+      box-shadow: none;
+      width: 8.5in;
+      height: 11in;
+      max-height: 11in;
+      padding: 0.42in 0.55in 0.36in 0.55in;
+    }
+    body, * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Jack Zhang — the site</a>
+  <span class="hint">Print → “Save as PDF” gives you the one-pager.</span>
+  <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<div class="sheet-stage">
+<div class="sheet-wrap" id="sheetWrap">
+<section class="sheet">
+
+  <!-- ───── Masthead ───── -->
+  <header class="masthead">
+    <div class="folio">
+      <span>Curriculum&nbsp;Vitæ</span>
+      <span class="dot">·</span>
+      <span>Toronto</span>
+      <span class="dot">·</span>
+      <span>Q3&nbsp;MMXXVI</span>
+    </div>
+    <h1 class="name">Jack Zhang<span class="period">.</span></h1>
+    <p class="standfirst">
+      <span class="dash">—</span>Finance leader specializing in <em>finance transformation</em> and <em>multi-jurisdictional operations</em> across the gaming and technology sectors.
+    </p>
+  </header>
+
+  <!-- ───── Experience ───── -->
+  <div class="section">
+    <h2 class="section-head">Experience</h2>
+
+    <div class="timeline">
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">Jun 2025 — Present</span>
+          <span class="company">Blazesoft Group</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">Privately-held gaming &amp; technology group across North America, Europe, and the Middle East</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Vice President, Finance</h3>
+          <ul class="bullets">
+            <li>Report to the CEO. Lead finance across <b>20+ legal entities in 7 jurisdictions</b> for a gaming and technology group generating <b>USD 400M+</b> in annual revenue; direct team of six covering treasury, AP &amp; payroll, accounting, reporting, and tax.</li>
+            <li><b>Rebuilt finance operations from foundations within the first year</b> — redesigned AP, treasury, banking, payroll, and reporting workflows; introduced segregation of duties, group-wide approval matrices, and a standardized close calendar across every entity.</li>
+            <li>Served as <b>internal auditor</b> on the group's iGaming license application with <b>Ontario iGO</b>, one of the most rigorous gaming regulators globally; application <b>cleared on first attempt with no findings</b>, paving the way for additional markets.</li>
+            <li><b>Established the group's transfer pricing structure with a global footprint</b> — intercompany agreements, supporting TP study, and entity-level reconciliation across entities in seven jurisdictions.</li>
+            <li>Built <b>strong tax compliance across all operating jurisdictions</b> — Canada, US, EU, UAE, and beyond — covering corporate income, indirect tax, and statutory filings; defended a multi-year CRA audit without reassessment.</li>
+            <li>Deployed <b>workflow automation and AI agents</b> across finance operations (automated reviews, exception monitoring, recurring reporting, AI-queryable records database) — on track to <b>reduce Finance payroll budget by over 25%</b>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">May 2021 — Jun 2025</span>
+          <span class="company">Bally's Corporation</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">NYSE-listed retail and online casino operator</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Director of Accounting, NA Interactive <span class="progression">→ formerly Sr. Manager, Financial Reporting</span></h3>
+          <ul class="bullets">
+            <li>Built and ran consolidation for the online gaming segments — <b>80+ entities across 6 currencies and 20 jurisdictions</b>, supporting <b>USD 1.1B</b> annual revenue under both IFRS and US GAAP; served as the in-house technical-accounting SME.</li>
+            <li>Designed and stood up the accounting and SOX control environment for the NA online segment from inception (USD 100M); <b>reduced segment close from 12 to 9 days</b> while <b>cutting team budget by USD 200K+</b>, with reporting across 38 entities and 11 jurisdictions.</li>
+            <li>Led the <b>IFRS/LSE → US-GAAP/NYSE reporting transition</b> for the division and mitigated all material SOX control weaknesses in the first annual group audit.</li>
+          </ul>
+          <div class="notable">Bally's Fiscal 2022 All-Star — top 20 of c. 2,500 in the online gaming division.</div>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">May 2016 — May 2021</span>
+          <span class="company">RSM Canada</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">Top-6 global public accounting firm</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Audit &amp; Assurance <span class="progression">— Associate (2016) → Senior Associate (2018) → Manager (2020)</span></h3>
+          <ul class="bullets">
+            <li>Designed, executed, and supervised IFRS / ASPE audits with engagement teams of <b>1–6 direct reports</b>; specialized in clients with international operations and PE portfolios — consolidations of <b>10–20 entities per reporting group</b>.</li>
+            <li>Provided technical guidance under <b>IFRS 9, 15, 16</b>, business combinations, goodwill impairment, and share-based payments; evaluated internal controls over complex business processes.</li>
+          </ul>
+          <div class="notable">Inaugural Canadian selected for a 4-month RSM Australia secondment — recognized for consistently high-quality service and technical accuracy.</div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- ───── Footer strip ───── -->
+  <div class="footer-strip">
+    <div class="foot-col">
+      <div class="foot-head">Certification</div>
+      <div class="foot-line">
+        <span class="institution">CPA Ontario</span> · 2017 — Present
+        <span class="sub">CPA PEP &amp; CFE Mentor (2017 — 2025)</span>
+      </div>
+    </div>
+    <div class="foot-col">
+      <div class="foot-head">Education</div>
+      <div class="foot-line">
+        <span class="institution">University of Waterloo</span> · 2009 — 2013
+        <span class="sub">Bachelor of Accounting &amp; Financial Management</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+</div>
+
+<script>
+(function () {
+  /* Scale the fixed 8.5in sheet to fit narrow screens */
+  var wrap = document.getElementById("sheetWrap");
+  var SHEET_W = 816; /* 8.5in @ 96dpi */
+  var SHEET_H = 1056; /* 11in @ 96dpi */
+  function fit() {
+    var vw = document.documentElement.clientWidth;
+    var s = Math.min(1, (vw - 24) / SHEET_W);
+    var tx = Math.max(0, (vw - SHEET_W * s) / 2);
+    wrap.style.transform = "translateX(" + tx + "px) scale(" + s + ")";
+    wrap.style.height = (SHEET_H * s) + "px";
+  }
+  window.addEventListener("resize", fit, { passive: true });
+  fit();
+})();
+</script>
+
+</body>
+</html>

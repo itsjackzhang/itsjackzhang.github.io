@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Jack Zhang</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23F4EFE6'/%3E%3Ctext x='30' y='46' font-family='Georgia,serif' font-weight='bold' font-size='40' text-anchor='middle' fill='%230F0E0C'%3EJ%3C/text%3E%3Ccircle cx='48' cy='44' r='4' fill='%23A8341F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EFE6;
+    --ink: #0F0E0C;
+    --muted: #76706A;
+    --rule: #C9C0B0;
+    --accent: #A8341F;
+    --display: "Fraunces", "Times New Roman", serif;
+    --body: "Newsreader", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.5rem, 5vw, 4rem);
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  .folio {
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.42em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .folio::before { content: ""; flex: 0 0 2rem; height: 1px; background: var(--ink); }
+  .folio::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  .folio .dot { color: var(--accent); margin: 0 0.5em; letter-spacing: 0; }
+
+  main { margin: auto 0; max-width: 46rem; }
+  .code {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: clamp(5rem, 22vw, 14rem);
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    margin: 0;
+  }
+  .code .period { color: var(--accent); font-style: italic; font-weight: 500; font-variation-settings: "opsz" 144, "wght" 500; }
+  h1 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 72, "wght" 500;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    margin: 1.5rem 0 0.8rem;
+    line-height: 1.25;
+  }
+  p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--muted);
+    margin: 0 0 2rem;
+    max-width: 34rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 1rem 1.7rem;
+    transition: background 0.25s;
+  }
+  .back:hover { background: var(--accent); }
+  .fine {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<div class="folio">
+  <span>Jack&nbsp;Zhang</span>
+  <span class="dot">·</span>
+  <span>Errata</span>
+</div>
+
+<main>
+  <p class="code">404<span class="period">.</span></p>
+  <h1>This page doesn't reconcile.</h1>
+  <p>The entry you're looking for was never journalized — or has since been reversed. Either way, the difference has been posted to suspense, and the ledger below still balances.</p>
+  <a class="back" href="/">Return to the ledger →</a>
+</main>
+
+<div class="fine">
+  <span>Error — Entry Not Found</span>
+  <span>Ref. № 404</span>
+</div>
+
+</body>
+</html>

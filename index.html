@@ -1,11 +1,1102 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Jack Zhang</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jack Zhang — VP Finance · Toronto</title>
+<meta name="description" content="Finance leader specializing in finance transformation and multi-jurisdictional operations — 20+ entities, seven jurisdictions, US$400M+. Rebuilding finance operations with AI. Toronto.">
+<meta property="og:title" content="Jack Zhang — VP Finance">
+<meta property="og:description" content="Finance leader specializing in finance transformation and multi-jurisdictional operations across the gaming and technology sectors. Toronto.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23F4EFE6'/%3E%3Ctext x='30' y='46' font-family='Georgia,serif' font-weight='bold' font-size='40' text-anchor='middle' fill='%230F0E0C'%3EJ%3C/text%3E%3Ccircle cx='48' cy='44' r='4' fill='%23A8341F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EFE6;
+    --paper-deep: #EFE8DA;
+    --ink: #0F0E0C;
+    --muted: #76706A;
+    --rule: #C9C0B0;
+    --accent: #A8341F;
+    --display: "Fraunces", "Times New Roman", serif;
+    --body: "Newsreader", Georgia, serif;
+    --measure: 38rem;
+    --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-feature-settings: "ss01" on, "lnum" on;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* ── Paper grain ── */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.045'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  a { color: inherit; }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.6em 1em;
+    z-index: 100;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .skip-link:focus { left: 0; }
+
+  /* ── Reading progress ── */
+  .progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--accent);
+    z-index: 50;
+  }
+
+  /* ── Sticky running head ── */
+  .runninghead {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem var(--gutter);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    transform: translateY(-110%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .runninghead.is-on { transform: translateY(0); }
+  .runninghead .rh-name {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 60, "wght" 900;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .runninghead .rh-name .period { color: var(--accent); }
+  .runninghead nav {
+    display: flex;
+    gap: clamp(0.8rem, 2.5vw, 1.6rem);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+  }
+  .runninghead nav a {
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .runninghead nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    .runninghead nav a:not(.rh-keep) { display: none; }
+  }
+
+  /* ── Shell ── */
+  .shell {
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ── Masthead ── */
+  .masthead {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: clamp(1.5rem, 4vh, 3rem);
+    padding-bottom: clamp(1.5rem, 5vh, 3.5rem);
+  }
+
+  .folio {
+    text-transform: uppercase;
+    font-size: clamp(0.62rem, 1.4vw, 0.72rem);
+    letter-spacing: 0.42em;
+    color: var(--muted);
+    font-variant-numeric: lining-nums;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .folio::before {
+    content: "";
+    flex: 0 0 2rem;
+    height: 1px;
+    background: var(--ink);
+  }
+  .folio::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .folio .dot { color: var(--accent); margin: 0 0.5em; letter-spacing: 0; }
+  @media (max-width: 640px) {
+    .folio span.optional { display: none; }
+    .folio { font-size: 0.55rem; letter-spacing: 0.2em; gap: 0.6rem; }
+    .folio::before { flex-basis: 1rem; }
+  }
+
+  .mast-center { margin: auto 0; padding: clamp(2rem, 6vh, 4rem) 0; }
+
+  .name {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: clamp(3.4rem, 13.5vw, 11.5rem);
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+    margin: 0;
+  }
+  .name .line { display: block; overflow: hidden; }
+  .name .line > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .name .line:nth-child(2) > span { animation-delay: 0.12s; }
+  .name .period {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 144, "wght" 500;
+  }
+
+  @keyframes rise {
+    to { transform: translateY(0); }
+  }
+  @keyframes fadeup {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .standfirst {
+    margin: clamp(1.6rem, 4vh, 2.8rem) 0 0;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-variation-settings: "opsz" 36, "wght" 400, "SOFT" 60;
+    font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+    line-height: 1.45;
+    max-width: 44rem;
+    padding-left: 1.6rem;
+    text-indent: -1.6rem;
+    opacity: 0;
+    animation: fadeup 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  }
+  .standfirst .dash { color: var(--accent); font-style: normal; font-weight: 500; margin-right: 0.35rem; }
+  .standfirst em {
+    font-weight: 500;
+    background-image: linear-gradient(to top, rgba(168,52,31,0.16) 0, rgba(168,52,31,0.16) 0.18em, transparent 0.18em);
+  }
+
+  /* ── Masthead contents (annual-report TOC) ── */
+  .contents {
+    opacity: 0;
+    animation: fadeup 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+  }
+  .contents .c-head {
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    letter-spacing: 0.42em;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+  }
+  .contents ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .contents li { border-bottom: 1px solid var(--rule); }
+  .contents a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.85rem 0.25rem 0.85rem 0;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contents a:hover { color: var(--accent); }
+  .contents .no {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+  .contents .t {
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 24, "wght" 500;
+    font-size: 1.02rem;
+  }
+  .contents .arr {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: transform 0.25s, color 0.2s;
+  }
+  .contents a:hover .arr { transform: translateX(4px); color: var(--accent); }
+
+  /* ── Sections ── */
+  .section {
+    position: relative;
+    padding: clamp(3.5rem, 9vh, 6.5rem) 0 clamp(3rem, 8vh, 5.5rem);
+  }
+  .section + .section { border-top: 1px solid var(--rule); }
+
+  .ghost {
+    position: absolute;
+    top: 0.5rem;
+    right: -0.03em;
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: clamp(6rem, 18vw, 15rem);
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.045;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin: 0 0 clamp(1.8rem, 4vh, 3rem);
+    position: relative;
+    z-index: 1;
+  }
+  .section-head .no {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+  .section-head h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .section-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    transform-origin: left;
+  }
+  .reveal .section-head::after { transform: scaleX(0); transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s; }
+  .reveal.is-visible .section-head::after { transform: scaleX(1); }
+
+  /* ── Reveal on scroll ── */
+  .reveal > .rv {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible > .rv { opacity: 1; transform: none; }
+  .reveal.is-visible > .rv:nth-child(2) { transition-delay: 0.08s; }
+  .reveal.is-visible > .rv:nth-child(3) { transition-delay: 0.16s; }
+  .reveal.is-visible > .rv:nth-child(4) { transition-delay: 0.24s; }
+  .reveal.is-visible > .rv:nth-child(5) { transition-delay: 0.32s; }
+  .reveal.is-visible > .rv:nth-child(6) { transition-delay: 0.4s; }
+  .reveal.is-visible > .rv:nth-child(7) { transition-delay: 0.48s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .name .line > span { animation: none; transform: none; }
+    .standfirst, .contents { animation: none; opacity: 1; }
+    .reveal > .rv { opacity: 1; transform: none; transition: none; }
+    .reveal .section-head::after { transform: none; transition: none; }
+  }
+
+  /* ── № 01 · Figures ── */
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--rule);
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 860px) { .figures { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .figures { grid-template-columns: 1fr; } }
+  .fig {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: clamp(1.3rem, 3vw, 2.2rem) clamp(1rem, 2.5vw, 1.8rem) clamp(1.1rem, 2.5vw, 1.8rem);
+    background: var(--paper);
+    transition: background 0.3s;
+  }
+  .fig:hover { background: var(--paper-deep); }
+  .fig .val {
+    font-family: var(--display);
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "wght" 300;
+    font-size: clamp(2.6rem, 6vw, 4.4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: lining-nums tabular-nums;
+    margin-bottom: 0.7rem;
+    white-space: nowrap;
+  }
+  .fig .val .unit {
+    font-size: 0.4em;
+    font-style: italic;
+    font-variation-settings: "opsz" 36, "wght" 400;
+    letter-spacing: 0;
+    margin-right: 0.12em;
+  }
+  .fig .val .suffix { color: var(--accent); }
+  .fig .val em {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "wght" 350;
+  }
+  .fig .lab {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .fig .sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 12, "wght" 400;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── № 02 · The Record ── */
+  .timeline { position: relative; z-index: 1; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 1rem;
+    bottom: 1rem;
+    width: 1px;
+    background: var(--rule);
+  }
+  .role {
+    display: grid;
+    grid-template-columns: minmax(11rem, 15rem) 1fr;
+    gap: 0 clamp(1.5rem, 4vw, 3.5rem);
+    padding: 0 0 clamp(2.5rem, 6vh, 4rem) 0;
+    position: relative;
+  }
+  .role:last-child { padding-bottom: 0; }
+  .role::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--paper);
+  }
+  @media (max-width: 760px) {
+    .timeline::before { display: none; }
+    .role { grid-template-columns: 1fr; gap: 0.8rem 0; }
+    .role::before { display: none; }
+    .role .meta { padding-left: 0; border-left: 2px solid var(--accent); padding-left: 0.9rem; }
+  }
+  .role .meta {
+    padding-left: 1.4rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .meta .dates {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 0.88rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.35rem;
+    font-variant-numeric: lining-nums;
+  }
+  .meta .company {
+    display: block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-variation-settings: "opsz" 18, "wght" 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+  }
+  .meta .descriptor, .meta .location {
+    display: block;
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 12, "wght" 400;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .meta .descriptor { margin-top: 0.3rem; }
+
+  .role .content .title {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 24, "wght" 500;
+    font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+    color: var(--accent);
+    margin: 0 0 0.9rem;
+    line-height: 1.25;
+  }
+  .role .content .title .progression {
+    color: var(--muted);
+    font-size: 0.62em;
+    font-weight: 400;
+    font-variation-settings: "opsz" 14, "wght" 400;
+    margin-left: 0.35rem;
+    white-space: nowrap;
+  }
+  ul.bullets { margin: 0; padding: 0; list-style: none; max-width: 46rem; }
+  ul.bullets li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.55rem;
+    font-size: clamp(0.95rem, 1.8vw, 1.02rem);
+    line-height: 1.55;
+  }
+  ul.bullets li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  ul.bullets b {
+    font-weight: 500;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+  }
+  .notable {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--accent);
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 14, "wght" 500;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 42rem;
+  }
+
+  /* ── № 03 · Present Tense ── */
+  .now-grid {
+    display: grid;
+    grid-template-columns: minmax(0, var(--measure)) 1fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    position: relative;
+    z-index: 1;
+    align-items: start;
+  }
+  @media (max-width: 860px) { .now-grid { grid-template-columns: 1fr; } }
+  .now-copy p {
+    font-size: clamp(1rem, 1.9vw, 1.1rem);
+    line-height: 1.7;
+    margin: 0 0 1.3rem;
+  }
+  .now-copy p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: 3.4em;
+    float: left;
+    line-height: 0.82;
+    padding-right: 0.12em;
+    color: var(--accent);
+  }
+  .now-copy b {
+    font-weight: 500;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+  }
+  .pullquote {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 72, "wght" 500;
+    font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+    line-height: 1.3;
+    margin: 0;
+    padding-top: 0.4rem;
+    position: sticky;
+    top: 5.5rem;
+  }
+  .pullquote::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    background: var(--accent);
+    margin-bottom: 1.4rem;
+  }
+  .pullquote .q { color: var(--accent); }
+  .now-list {
+    margin: 1.8rem 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--ink);
+    max-width: var(--measure);
+  }
+  .now-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+  .now-list .k {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex: 0 0 7.5rem;
+  }
+
+  /* ── № 04 · Beyond the Desk ── */
+  .beyond {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 760px) { .beyond { grid-template-columns: 1fr; } }
+  .b-item { border-top: 1px solid var(--ink); padding-top: 1.1rem; }
+  .b-item .b-head {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.7rem;
+  }
+  .b-item .b-title {
+    font-family: var(--display);
+    font-variation-settings: "opsz" 24, "wght" 600;
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin-bottom: 0.45rem;
+    line-height: 1.3;
+  }
+  .b-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .b-item .b-sub {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 12, "wght" 400;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* ── Résumé CTA band ── */
+  .cta {
+    border-top: 1px solid var(--rule);
+    background: var(--paper-deep);
+  }
+  .cta-inner {
+    padding: clamp(3rem, 8vh, 5rem) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .cta h2 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-variation-settings: "opsz" 72, "wght" 500;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    margin: 0;
+    line-height: 1.2;
+  }
+  .cta h2 .q { color: var(--accent); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--display);
+    font-variation-settings: "opsz" 14, "wght" 600;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--paper);
+    background: var(--ink);
+    padding: 1.05rem 1.8rem;
+    border: 1px solid var(--ink);
+    transition: background 0.25s, color 0.25s;
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); }
+  .btn .arr { transition: transform 0.25s; }
+  .btn:hover .arr { transform: translateX(4px); }
+
+  /* ── Colophon footer ── */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .foot-inner { padding: clamp(3.5rem, 9vh, 6rem) 0 clamp(2rem, 5vh, 3rem); }
+  .foot-name {
+    font-family: var(--display);
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "wght" 900;
+    font-size: clamp(2.6rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 2.5rem;
+  }
+  .foot-name .period { color: var(--accent); font-style: italic; font-weight: 500; font-variation-settings: "opsz" 144, "wght" 500; }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(244, 239, 230, 0.22);
+  }
+  @media (max-width: 640px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-col .f-head {
+    font-size: 0.62rem;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: rgba(244, 239, 230, 0.5);
+    margin-bottom: 0.8rem;
+  }
+  .foot-col p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(244, 239, 230, 0.82);
+  }
+  .foot-col a {
+    color: var(--paper);
+    text-decoration: none;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    transition: background-size 0.25s, color 0.25s;
+    padding-bottom: 2px;
+  }
+  .foot-col a:hover { background-size: 100% 0.35em; }
+  .foot-fine {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(244, 239, 230, 0.4);
+  }
+</style>
 </head>
 <body>
-  <h1>Jack Zhang</h1>
-  <p>Site under construction.</p>
+
+<a class="skip-link" href="#record">Skip to experience</a>
+<div class="progress" aria-hidden="true"></div>
+
+<!-- Running head (appears on scroll) -->
+<div class="runninghead" id="runninghead">
+  <a class="rh-name" href="#top">Jack Zhang<span class="period">.</span></a>
+  <nav aria-label="Sections">
+    <a href="#figures">Figures</a>
+    <a href="#record">Record</a>
+    <a href="#now">Now</a>
+    <a href="#beyond">Beyond</a>
+    <a class="rh-keep" href="resume.html">Résumé</a>
+  </nav>
+</div>
+
+<!-- ════════ Masthead ════════ -->
+<header class="masthead shell" id="top">
+  <div class="folio">
+    <span>Curriculum&nbsp;Vitæ</span>
+    <span class="dot">·</span>
+    <span>Toronto,&nbsp;Canada</span>
+    <span class="dot optional">·</span>
+    <span class="optional">MMXXVI</span>
+  </div>
+
+  <div class="mast-center">
+    <h1 class="name">
+      <span class="line"><span>Jack</span></span>
+      <span class="line"><span>Zhang<span class="period">.</span></span></span>
+    </h1>
+    <p class="standfirst">
+      <span class="dash">—</span>Finance leader specializing in <em>finance transformation</em> and <em>multi-jurisdictional operations</em> across the gaming and technology sectors. Currently rebuilding what a finance department can be — <em>with AI doing the reconciling</em>.
+    </p>
+  </div>
+
+  <nav class="contents" aria-label="Contents">
+    <div class="c-head">Contents</div>
+    <ol>
+      <li><a href="#figures"><span class="no">№ 01</span><span class="t">In Figures</span><span class="arr">→</span></a></li>
+      <li><a href="#record"><span class="no">№ 02</span><span class="t">The Record</span><span class="arr">→</span></a></li>
+      <li><a href="#now"><span class="no">№ 03</span><span class="t">Present Tense</span><span class="arr">→</span></a></li>
+      <li><a href="#beyond"><span class="no">№ 04</span><span class="t">Beyond the Desk</span><span class="arr">→</span></a></li>
+      <li><a href="resume.html"><span class="no">App. A</span><span class="t">Résumé, print edition</span><span class="arr">→</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ════════ № 01 · In Figures ════════ -->
+  <section class="section shell reveal" id="figures" aria-labelledby="h-figures">
+    <div class="ghost" aria-hidden="true">01</div>
+    <div class="section-head rv">
+      <span class="no">№ 01</span>
+      <h2 id="h-figures">In Figures</h2>
+    </div>
+
+    <div class="figures rv">
+      <div class="fig">
+        <div class="val"><span data-count="20">20</span><span class="suffix">+</span></div>
+        <div class="lab">Legal entities in remit</div>
+        <div class="sub">across seven jurisdictions — Canada, US, EU, UAE &amp; beyond</div>
+      </div>
+      <div class="fig">
+        <div class="val"><span class="unit">US$</span><span data-count="400">400</span><span class="unit">M</span><span class="suffix">+</span></div>
+        <div class="lab">Annual revenue, current group</div>
+        <div class="sub">privately-held gaming &amp; technology</div>
+      </div>
+      <div class="fig">
+        <div class="val"><span data-count="80">80</span><span class="suffix">+</span></div>
+        <div class="lab">Entities consolidated at peak</div>
+        <div class="sub">six currencies · twenty jurisdictions · US$1.1B revenue</div>
+      </div>
+      <div class="fig">
+        <div class="val"><span data-count="12" data-count-from="0">12</span><em>→</em><span data-count="9" data-count-from="0">9</span></div>
+        <div class="lab">Days to close, month-end</div>
+        <div class="sub">while cutting US$200K+ from team budget</div>
+      </div>
+      <div class="fig">
+        <div class="val"><em>Nil</em></div>
+        <div class="lab">Findings — iGO licence review</div>
+        <div class="sub">internal auditor; cleared on first attempt</div>
+      </div>
+      <div class="fig">
+        <div class="val"><span data-count="25">25</span><span class="unit">%</span><span class="suffix">+</span></div>
+        <div class="lab">Finance payroll being automated</div>
+        <div class="sub">AI agents &amp; workflow automation, on track</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ № 02 · The Record ════════ -->
+  <section class="section shell reveal" id="record" aria-labelledby="h-record">
+    <div class="ghost" aria-hidden="true">02</div>
+    <div class="section-head rv">
+      <span class="no">№ 02</span>
+      <h2 id="h-record">The Record</h2>
+    </div>
+
+    <div class="timeline rv">
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">Jun 2025 — Present</span>
+          <span class="company">Blazesoft Group</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">Privately-held gaming &amp; technology group across North America, Europe, and the Middle East</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Vice President, Finance</h3>
+          <ul class="bullets">
+            <li>Report to the CEO. Lead finance across <b>20+ legal entities in 7 jurisdictions</b> for a group generating <b>US$400M+</b> in annual revenue; direct team of six covering treasury, AP &amp; payroll, accounting, reporting, and tax.</li>
+            <li><b>Rebuilt finance operations from foundations within the first year</b> — redesigned AP, treasury, banking, payroll, and reporting workflows; introduced segregation of duties, group-wide approval matrices, and a standardized close calendar across every entity.</li>
+            <li>Served as <b>internal auditor</b> on the group's iGaming licence application with <b>Ontario iGO</b>, one of the most rigorous gaming regulators globally; application <b>cleared on first attempt with no findings</b>.</li>
+            <li><b>Established the group's transfer-pricing structure with a global footprint</b> — intercompany agreements, supporting TP study, and entity-level reconciliation across seven jurisdictions; defended a multi-year CRA audit without reassessment.</li>
+          </ul>
+          <div class="notable">The AI-agent finance program lives in № 03, below — it deserves more than a bullet.</div>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">May 2021 — Jun 2025</span>
+          <span class="company">Bally's Corporation</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">NYSE-listed retail and online casino operator</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Director of Accounting, NA Interactive <span class="progression">← Sr. Manager, Consolidation &amp; Reporting</span></h3>
+          <ul class="bullets">
+            <li>Built and ran consolidation for the online gaming segments — <b>80+ entities across 6 currencies and 20 jurisdictions</b>, supporting <b>US$1.1B</b> annual revenue under both IFRS and US GAAP; served as the in-house technical-accounting SME.</li>
+            <li>Designed and stood up the accounting and SOX control environment for the NA online segment from inception (<b>c. US$100M</b>); <b>reduced segment close from 12 to 9 days</b> while <b>cutting team budget by US$200K+</b>, with reporting across 38 entities and 11 jurisdictions.</li>
+            <li>Led the <b>IFRS/LSE → US-GAAP/NYSE reporting transition</b> for the division and mitigated all material SOX control weaknesses in the first annual group audit.</li>
+          </ul>
+          <div class="notable">Bally's Fiscal 2022 All-Star — top 20 of c. 2,500 in the online gaming division.</div>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">May 2016 — May 2021</span>
+          <span class="company">RSM Canada</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">Top-6 global public accounting firm</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Audit &amp; Assurance <span class="progression">Associate → Senior → Manager</span></h3>
+          <ul class="bullets">
+            <li>Designed, executed, and supervised IFRS / ASPE audits with engagement teams of <b>1–6 direct reports</b>; specialized in clients with international operations and PE portfolios — consolidations of <b>10–20 entities per reporting group</b>.</li>
+            <li>Provided technical guidance under <b>IFRS 9, 15, 16</b>, business combinations, goodwill impairment, and share-based payments; evaluated internal controls over complex business processes.</li>
+          </ul>
+          <div class="notable">Inaugural Canadian selected for a 4-month RSM Australia secondment; entrusted with a client portfolio recognized internally as a "crown jewel" of the practice.</div>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="meta">
+          <span class="dates">Jan 2014 — Apr 2016</span>
+          <span class="company">KIK Custom Products</span>
+          <span class="location">Toronto, ON</span>
+          <span class="descriptor">Manufacturer of private-label consumer products</span>
+        </div>
+        <div class="content">
+          <h3 class="title">Financial Analyst, CPA Rotational Program</h3>
+          <ul class="bullets">
+            <li>Prepared period close, consolidations, and MD&amp;A for North America operations with <b>US$300M+</b> in revenue; built the budgeting and forecasting models behind executive-team reporting.</li>
+            <li>Designed an <b>automated financial reporting process</b> that cut the close timeline by <b>40%</b> — the automation instinct showed up early.</li>
+            <li>Initiated an internal audit that uncovered historic pricing errors, <b>preventing a margin loss of US$230K+</b>.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ════════ № 03 · Present Tense ════════ -->
+  <section class="section shell reveal" id="now" aria-labelledby="h-now">
+    <div class="ghost" aria-hidden="true">03</div>
+    <div class="section-head rv">
+      <span class="no">№ 03</span>
+      <h2 id="h-now">Present Tense</h2>
+    </div>
+
+    <div class="now-grid rv">
+      <div class="now-copy">
+        <p>The most interesting problem in finance right now isn't an accounting problem — it's an organizational one. What does a finance department look like when the reconciling, the checking, and the first draft of everything no longer need a person?</p>
+        <p>At Blazesoft I'm answering that in production, not in a slide deck: <b>AI agents deployed across live finance operations</b> — payment-run reviews, exception monitoring over the group's bank activity, recurring reporting that drafts itself, and an accounting-records database the whole team queries in plain English.</p>
+        <p>The goal isn't fewer people for its own sake. It's a finance function where <b>humans do judgment and machines do reconciliation</b> — currently tracking to a 25%+ reduction in finance payroll, with a faster close than the team has ever run.</p>
+
+        <ul class="now-list">
+          <li><span class="k">Reviews</span><span>Automated payment-run and payroll reviews with exception flags, not spot checks</span></li>
+          <li><span class="k">Monitoring</span><span>Continuous exception monitoring across multi-entity, multi-currency bank activity</span></li>
+          <li><span class="k">Reporting</span><span>Recurring management reporting and reconciliations that draft themselves</span></li>
+          <li><span class="k">Records</span><span>An AI-queryable accounting database — questions in English, answers from the GL</span></li>
+        </ul>
+      </div>
+
+      <blockquote class="pullquote">
+        <span class="q">“</span>Humans do judgment. Machines do reconciliation.<span class="q">”</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ════════ № 04 · Beyond the Desk ════════ -->
+  <section class="section shell reveal" id="beyond" aria-labelledby="h-beyond">
+    <div class="ghost" aria-hidden="true">04</div>
+    <div class="section-head rv">
+      <span class="no">№ 04</span>
+      <h2 id="h-beyond">Beyond the Desk</h2>
+    </div>
+
+    <div class="beyond">
+      <div class="b-item rv">
+        <div class="b-head">Mentoring</div>
+        <div class="b-title">CPA PEP &amp; CFE Mentor</div>
+        <p>Nine years of walking candidates through the modules and the Common Final Examination — first at RSM, then at Bally's.</p>
+        <span class="b-sub">2017 — 2025</span>
+      </div>
+      <div class="b-item rv">
+        <div class="b-head">Credentials</div>
+        <div class="b-title">CPA Ontario · University of Waterloo</div>
+        <p>Chartered Professional Accountant since 2017. Bachelor of Accounting &amp; Financial Management, 2013.</p>
+        <span class="b-sub">Toronto &amp; Waterloo, ON</span>
+      </div>
+      <div class="b-item rv">
+        <div class="b-head">Field Notes</div>
+        <div class="b-title">The Australia Chapter</div>
+        <p>Inaugural Canadian selected for a four-month RSM Australia secondment — earned on engagement quality, spent on the other side of the planet.</p>
+        <span class="b-sub">Sydney, AU</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════ Résumé CTA ════════ -->
+<div class="cta">
+  <div class="shell cta-inner">
+    <h2><span class="q">“</span>Prefer it on paper?<span class="q">”</span></h2>
+    <a class="btn" href="resume.html">Résumé — print edition <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- ════════ Colophon ════════ -->
+<footer>
+  <div class="shell foot-inner">
+    <p class="foot-name">Jack Zhang<span class="period">.</span></p>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="f-head">Correspondence</div>
+        <p>The inbox lives on <a href="https://www.linkedin.com/" rel="me">LinkedIn</a>.<br>Toronto, Canada.</p>
+      </div>
+      <div class="foot-col">
+        <div class="f-head">Colophon</div>
+        <p>Set in Fraunces &amp; Newsreader. Designed and built by hand — with a machine assisting, naturally. Hosted on GitHub Pages.</p>
+      </div>
+    </div>
+    <div class="foot-fine">
+      <span>© MMXXVI Jack Zhang</span>
+      <span>Toronto, Canada</span>
+      <span>Rev. Q3 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Reading progress */
+  var bar = document.querySelector(".progress");
+  function onScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+  }
+  document.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* Running head after masthead */
+  var rh = document.getElementById("runninghead");
+  var mast = document.querySelector(".masthead");
+  new IntersectionObserver(function (entries) {
+    rh.classList.toggle("is-on", !entries[0].isIntersecting);
+  }, { rootMargin: "-80px 0px 0px 0px" }).observe(mast);
+
+  /* Scroll reveals */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+
+  /* Count-up figures */
+  var counted = false;
+  var figs = document.querySelector(".figures");
+  if (figs && !reduced) {
+    new IntersectionObserver(function (entries, obs) {
+      if (!entries[0].isIntersecting || counted) return;
+      counted = true;
+      obs.disconnect();
+      document.querySelectorAll("[data-count]").forEach(function (el) {
+        var to = parseInt(el.getAttribute("data-count"), 10);
+        var from = parseInt(el.getAttribute("data-count-from") || "0", 10);
+        var t0 = null, dur = 1400;
+        function step(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 4);
+          el.textContent = Math.round(from + (to - from) * eased);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.3 }).observe(figs);
+  }
+})();
+</script>
+
 </body>
 </html>
